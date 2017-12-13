@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Ninja Gold</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}"></head>
+<body>
+	<div class="wrapper">
+		<h1>Ninja Gold </h1>
+		<P> Your Gold: {{session['yourgold']}}</P> 
+			<div class="location">
+				<h4> Farm</h4>
+				<p>Earn 10-20 gold</p>
+				<form action="/process" method="post">	
+					<input type="hidden" name="location" value="Farm">		
+					<input type="submit" name="Find Gold!">
+					</form>
+				</div>
+				<div class="location">
+					<h4>Cave</h4>
+					<p>Earn 5-10 gold</p>
+					<form action="/process" method="post">
+					 <input type="hidden" name="location" value="Cave">			
+					<input type="submit" name="Find Gold!">
+					</form>
+				</div>
+				<div class="location">
+					<h4>House</h4>
+					<p>Earn 2-5 gold</p>
+					<form action="/process" method="post">	
+					<input type="hidden" name="location" value="House">			
+					<input type="submit" name="Find Gold!">
+					</form>
+				</div>
+				<div class="location">	
+					<h4>Casino</h4>
+					<p>Earn 0-50 gold</p>
+					<form action="/process" method="post">
+				    <input type="hidden" name="location" value="Casino">				
+					<input type="submit" name="Find Gold!">
+					</form>
+			   </div>
+			   <div id="activities">
+			   		Earnings (profit/loss):
+			   		 {% for bankstatus in session['yourActivity'] %}
+			   		     {% if bankstatus.find('lost') > 0 %}
+				   	      <p style="color: red;">{{bankstatus}}</p>
+				   	     {% else %}
+					      <p style="color: green;">{{bankstatus}}</p>
+					     {% endif %}
+				   	 {% endfor %}
+			   </div>	
+	  </div>		
+</body>
+</html>

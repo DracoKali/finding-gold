@@ -1,0 +1,43 @@
+/**{
+
+	margin-left: 0px auto;
+	margin-right: 0px auto;
+
+}*/
+.wrapper{
+
+	background-color: teal;
+	width: 1000px;
+	padding: 10px;
+	overflow: hi
+}
+h1{
+
+	color: yellow;
+}
+.location{
+
+	display: inline-block;
+	border: 1px solid black;
+	margin: 10px;
+	width: 200px;
+	text-align: center;
+	position: relative;
+	left: 50px;
+}
+#activities{
+
+	border: 1px solid black;
+	width: 880px;
+	height: 220px;
+	position: relative;
+	left: 60px;
+	background-color: black;
+	color: white;
+	overflow: scroll;
+
+
+}
+p{
+	color: purple;
+}
